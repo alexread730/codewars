@@ -32,18 +32,23 @@ function encrypt(text, n) {
     str2 = '';
 
   }
-   return console.log(text);
+  //  return console.log(text);
 
 }
 
 function decrypt(encryptedText, n) {
 
+  if (encryptedText === null || encryptedText === '' || n <= 0) {
+    return encryptedText;
+  }
+
   let midLength = Math.floor(encryptedText.length/2);
   let decryptedText = '';
 
-  for (i = 0; i < n; i++) {
+  for (j = 0; j < n; j++) {
     let evens = encryptedText.substr(0, midLength);
     let odds = encryptedText.substr(midLength);
+    decryptedText = '';
 
     for (i = 0; i < encryptedText.length; i++) {
       decryptedText += odds.charAt(i);
@@ -51,11 +56,9 @@ function decrypt(encryptedText, n) {
     }
 
     encryptedText = decryptedText
-    console.log(decryptedText);
   }
-
-
+  return decryptedText;
 }
 
 encrypt("This kata is very interesting!", 1);
-decrypt("s eT ashi tist!", 4)
+decrypt("This is a test!", 0)
