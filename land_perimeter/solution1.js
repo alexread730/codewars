@@ -8,7 +8,7 @@ Given an array arr of strings complete the function landPerimeter by calculating
  'XXOXO',
  'OXOOO']
  should return: "Total land perimeter: 24"
-*/
+*/  
 
 function landPerimeter(arr) {
   let landArr = [];
